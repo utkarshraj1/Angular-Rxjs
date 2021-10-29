@@ -50,6 +50,8 @@ export class PromiseComponent implements OnInit {
 
   search(com: string): void {
     if(com.length === 0) {
+      this.isFirstTime = true;
+      this.output = undefined;
       return;
     }
     this.isFirstTime = false;
