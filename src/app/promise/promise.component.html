@@ -1,0 +1,18 @@
+<div class="m-4">
+    <h2>Promises</h2>
+</div>
+
+<div class="center ml-4">
+    <h4 class="ml-4">Definite Events</h4>
+    <br>
+    <button type="button" class="btn btn-primary ml-4" (click)="definiteEvent()">Click me</button>
+    <br>
+    <hr>
+    <h4 class="ml-4">Indefinite - Promises</h4>
+    <br>
+    <button type="button" class="btn btn-success mx-4" (click)="changeValue(true)">Resolve the promise</button>
+    <button type="button" class="btn btn-danger mx-4" (click)="changeValue(false)">Reject the promise</button>
+    <br>
+    <button type="button" class="btn btn-info mt-2 ml-4" (click)="promiseCalled()">Call the Promise</button>
+    <p class="ml-4 mt-2">Output is : {{popupValue}}</p>
+</div>
