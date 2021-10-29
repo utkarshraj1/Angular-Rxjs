@@ -23,10 +23,10 @@
     <button type="button" class="btn btn-outline-success mt-2 ml-4" (click)="search(company)">Click to Search</button>
     <br>
     <hr>
-    <p *ngIf="isFirstTime">Searched items will come here.</p>
-    <p *ngIf="output===undefined && !isFirstTime">Sorry, no car came with this manufacturer, please try again.</p>
+    <p *ngIf="isFirstTime" class="ml-4 mt-2">Searched items will come here.</p>
+    <p *ngIf="output===undefined && !isFirstTime" class="ml-4 mt-2">Sorry, no car came with this manufacturer, please try again.</p>
     <ng-container *ngIf="output!==undefined">
-        <div *ngFor="let out of output" class="card card-values mt-2">
+        <div *ngFor="let out of output" class="card card-values mt-2 ml-4">
             <div class="card-header">
                 <strong>{{out.maker}}</strong>
             </div>

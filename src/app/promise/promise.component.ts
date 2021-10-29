@@ -49,6 +49,9 @@ export class PromiseComponent implements OnInit {
   }
 
   search(com: string): void {
+    if(com.length === 0) {
+      return;
+    }
     this.isFirstTime = false;
     // console.log(this.carVal.filter(res => res.maker.toLowerCase().includes(this.company) ));
     let promiseExample2 = new Promise((resolve, reject) => {
