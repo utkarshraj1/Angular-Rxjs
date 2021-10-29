@@ -13,6 +13,28 @@
     <button type="button" class="btn btn-success mx-4" (click)="changeValue(true)">Resolve the promise</button>
     <button type="button" class="btn btn-danger mx-4" (click)="changeValue(false)">Reject the promise</button>
     <br>
-    <button type="button" class="btn btn-info mt-2 ml-4" (click)="promiseCalled()">Call the Promise</button>
+    <button type="button" class="btn btn-info mt-2 ml-4" (click)="promiseCalled1()">Call the Promise</button>
     <p class="ml-4 mt-2">Output is : {{popupValue}}</p>
+</div>
+
+<div class="my-4 ml-4 center">
+    <span class="ml-4">Enter the car manufacturer's name: </span>
+    <input class="form-control w-50 mt-2 ml-4" type="text" [(ngModel)]="company" placeholder="Enter here...">
+    <button type="button" class="btn btn-outline-success mt-2 ml-4" (click)="search(company)">Click to Search</button>
+    <br>
+    <hr>
+    <p *ngIf="isFirstTime">Searched items will come here.</p>
+    <p *ngIf="output===undefined && !isFirstTime">Sorry, no car came with this manufacturer, please try again.</p>
+    <ng-container *ngIf="output!==undefined">
+        <div *ngFor="let out of output" class="card card-values mt-2">
+            <div class="card-header">
+                <strong>{{out.maker}}</strong>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Car:</strong> {{out.car}}</li>
+                <li class="list-group-item"><strong>Origin:</strong> {{out.origin}}</li>
+                <li class="list-group-item"><strong>Launched Date:</strong> {{out.launched}}</li>
+            </ul>
+        </div>
+    </ng-container>
 </div>
