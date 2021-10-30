@@ -3,4 +3,5 @@ export interface Car {
     maker: string;
     origin: string;
     launched: string;
+    price: number;
 }
