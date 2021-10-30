@@ -7,12 +7,14 @@ import { HeaderComponent } from './includes/header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PromiseComponent } from './promise/promise.component';
 import { FormsModule } from '@angular/forms';
+import { AsyncAwaitComponent } from './async-await/async-await.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    PromiseComponent
+    PromiseComponent,
+    AsyncAwaitComponent
   ],
   imports: [
     BrowserModule,

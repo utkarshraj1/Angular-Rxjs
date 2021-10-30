@@ -14,7 +14,7 @@
     <button type="button" class="btn btn-danger mx-4" (click)="changeValue(false)">Reject the promise</button>
     <br>
     <button type="button" class="btn btn-info mt-2 ml-4" (click)="promiseCalled1()">Call the Promise</button>
-    <p class="ml-4 mt-2">Output is : {{popupValue}}</p>
+    <p class="ml-4 mt-2"><strong>Output is :</strong> {{popupValue}}</p>
 </div>
 
 <div class="my-4 ml-4 center">
@@ -34,6 +34,7 @@
                 <li class="list-group-item"><strong>Car:</strong> {{out.car}}</li>
                 <li class="list-group-item"><strong>Origin:</strong> {{out.origin}}</li>
                 <li class="list-group-item"><strong>Launched Date:</strong> {{out.launched}}</li>
+                <li class="list-group-item"><strong>On Road Price:</strong> {{out.price}}</li>
             </ul>
         </div>
     </ng-container>

@@ -1,0 +1,64 @@
+<h2 class="ml-4">Async/Await</h2>
+
+<div class="center ml-4 mt-4">
+    <strong>Using Pure Promises:</strong>
+    <br>
+    <input type="text" [(ngModel)]="name" class="form-control w-75 mt-2 ml-4s" placeholder="Name">
+    <input type="number" [(ngModel)]="age" class="form-control w-25 mt-2 ml-4s" placeholder="Age">
+    <input type="number" [(ngModel)]="salary" class="form-control w-50 mt-2 ml-4s" placeholder="Salary">
+    <button class="btn btn-success mx-2 mt-4" (click)="getLoanDetail1()">Get the Details</button>
+    <hr>
+    <!-- <div>{{output}}</div> -->
+    <p class="mt-2" *ngIf="!isResolved1">{{output1}}</p>
+    <ng-container *ngIf="isResolved1">
+        <strong>The list of cars whose loan can be processed:</strong>
+        <div *ngFor="let out of output1" class="card card-values mt-2 ml-4 w-50">
+            <div class="card-header">
+                <strong>{{out.maker}}</strong>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Car:</strong> {{out.car}}</li>
+                <li class="list-group-item"><strong>Origin:</strong> {{out.origin}}</li>
+                <li class="list-group-item"><strong>Launched Date:</strong> {{out.launched}}</li>
+                <li class="list-group-item"><strong>On Road Price:</strong> {{out.price}}</li>
+            </ul>
+        </div>
+    </ng-container>
+</div>
+
+<div class="center my-4 ml-4">
+    <strong>Using Async/Await:</strong>
+    <br>
+    <input type="text" [(ngModel)]="name" class="form-control w-75 mt-2 ml-4s" placeholder="Name">
+    <input type="number" [(ngModel)]="age" class="form-control w-25 mt-2 ml-4s" placeholder="Age">
+    <input type="number" [(ngModel)]="salary" class="form-control w-50 mt-2 ml-4s" placeholder="Salary">
+    <button class="btn btn-success mx-2 mt-4" (click)="getLoanDetails2()">Get the Details</button>
+    <hr>
+    <!-- <div>{{output2}}</div> -->
+    <p class="mt-2" *ngIf="!isResolved2">{{output2}}</p>
+    <ng-container *ngIf="isResolved2">
+        <strong>The list of cars whose loan can be processed:</strong>
+        <div *ngFor="let out of output2" class="card card-values mt-2 ml-4 w-50">
+            <div class="card-header">
+                <strong>{{out.maker}}</strong>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Car:</strong> {{out.car}}</li>
+                <li class="list-group-item"><strong>Origin:</strong> {{out.origin}}</li>
+                <li class="list-group-item"><strong>Launched Date:</strong> {{out.launched}}</li>
+                <li class="list-group-item"><strong>On Road Price:</strong> {{out.price}}</li>
+            </ul>
+        </div>
+    </ng-container>
+</div>
+
+<div class="center ml-4 mb-4">
+    <strong>Using mix:</strong>
+    <br>
+    <input type="text" [(ngModel)]="name" class="form-control w-75 mt-2 ml-4s" placeholder="Name">
+    <input type="number" [(ngModel)]="age" class="form-control w-25 mt-2 ml-4s" placeholder="Age">
+    <input type="number" [(ngModel)]="salary" class="form-control w-50 mt-2 ml-4s" placeholder="Salary">
+    <button class="btn btn-success mx-2 mt-4">Get the Details</button>
+    <hr>
+    <div>Output3</div>
+</div>
