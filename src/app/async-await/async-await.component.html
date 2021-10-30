@@ -53,12 +53,13 @@
 </div>
 
 <div class="center ml-4 mb-4">
-    <strong>Using mix:</strong>
+    <!-- <strong>Fetching data from an API:</strong>
     <br>
-    <input type="text" [(ngModel)]="name" class="form-control w-75 mt-2 ml-4s" placeholder="Name">
-    <input type="number" [(ngModel)]="age" class="form-control w-25 mt-2 ml-4s" placeholder="Age">
-    <input type="number" [(ngModel)]="salary" class="form-control w-50 mt-2 ml-4s" placeholder="Salary">
-    <button class="btn btn-success mx-2 mt-4">Get the Details</button>
+    <p>Fetch API usage</p> -->
+    <button class="btn btn-info mx-2 mt-4" (click)="randomAPIFetch()">Random API call using Promise</button>
+    <button class="btn btn-warning mx-2 mt-4" (click)="randomAPIFetchAA()">Random API call using Async/Await</button>
     <hr>
-    <div>Output3</div>
+    <p class="mx-2 mt-2">The random number is : <strong>{{randomNum}}</strong></p>
+    <hr>
+    <p class="mx-2 mt-4"><strong>The URL response is: </strong>{{output3}}</p>
 </div>
