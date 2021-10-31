@@ -114,7 +114,7 @@ export class AsyncAwaitComponent implements OnInit {
     let url = `${this.startUrl}/${this.randomNum}`;
 
     this.fetchAPI(url).then((response) => {
-      this.output3 = JSON.stringify(response);
+      this.output3 = response;
       // console.log(this.output3);
     });
   }
@@ -124,12 +124,12 @@ export class AsyncAwaitComponent implements OnInit {
     let url = `${this.startUrl}/${this.randomNum}`;
 
     const res = await this.fetchAPI(url);
-    this.output3 = JSON.stringify(res);
+    this.output3 = await res;
   }
 
-  fetchAPI (url: string): Promise<any> {
+  fetchAPI(url: string): Promise<any> {
     return fetch(url)
-    .then(res => res.json());
+      .then(res => res.json());
   }
 }
 
