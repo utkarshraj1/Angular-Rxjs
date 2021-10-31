@@ -24,7 +24,8 @@
     <br>
     <hr>
     <p *ngIf="isFirstTime" class="ml-4 mt-2">Searched items will come here.</p>
-    <p *ngIf="output===undefined && !isFirstTime" class="ml-4 mt-2">Sorry, no car came with this manufacturer, please try again.</p>
+    <p *ngIf="output===undefined && !isFirstTime" class="ml-4 mt-2">Sorry, no car came with this manufacturer, please
+        try again.</p>
     <ng-container *ngIf="output!==undefined">
         <div *ngFor="let out of output" class="card card-values mt-2 ml-4">
             <div class="card-header">
