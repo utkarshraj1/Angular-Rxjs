@@ -1,5 +1,5 @@
-import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { interval, Subscription } from 'rxjs';
+import { Component, ElementRef, OnDestroy, OnInit, ValueProvider, ViewChild } from '@angular/core';
+import { interval, Subscription, timer } from 'rxjs';
 
 @Component({
   selector: 'app-interval',
@@ -10,7 +10,8 @@ export class IntervalComponent implements OnInit, OnDestroy {
 
   getQuote: any;
   quoteData: any;
-  subscriptionHandling!: Subscription;
+  intervalSubscription!: Subscription;
+  timerSubscription!: Subscription;
   isDisabled!: boolean;
   // @ViewChild('subscribe') subscribe!: ElementRef;
 
@@ -20,7 +21,7 @@ export class IntervalComponent implements OnInit, OnDestroy {
     this.isDisabled = false;
   }
 
-  onSubscribe() {
+  onSubscribe(operatorName: string): void {
     // alert("in Onsubscribe Method")
     // console.log(this.subscribe.nativeElement);
     this.isDisabled = true;
@@ -29,29 +30,37 @@ export class IntervalComponent implements OnInit, OnDestroy {
       author: "Unknown"
     };
 
-    this.getQuote = interval(5000);
+    operatorName === 'Timer'
+      ? document.getElementById('timerInfo')!.innerHTML = 'Timer will start after 10 sec with 5 sec interval afterwards.'
+      : document.getElementById('timerInfo')!.innerHTML = 'Interval will start immediately with 5 sec interval.';
+
+    operatorName === 'Interval' ? this.getQuote = interval(5000) : this.getQuote = timer(10000, 5000);
     // console.log('Subscription start!');
-    this.subscriptionHandling = this.getQuote.subscribe((res: any) => {
+    this.intervalSubscription = this.getQuote.subscribe((res: any) => {
       // console.log(res);
-      fetch('https://api.quotable.io/random')
-        .then(res => res.json())
-        .then(response => {
-          // console.log(response);
-          this.quoteData = response;
-        });
+      this.fetchResponse().then(response => {
+        // console.log(response);
+        this.quoteData = response;
+      });
       // console.log(this.quoteData);
     });
   }
 
-  onUnsubscribe() {
+  onUnsubscribe(): void {
     this.isDisabled = false;
     // console.log('Unsubscribed!');
-    this.subscriptionHandling.unsubscribe();
+    this.intervalSubscription.unsubscribe();
     this.quoteData = undefined;
+    document.getElementById('timerInfo')!.innerHTML = '';
+  }
+
+  fetchResponse(): Promise<any> {
+    return fetch('https://api.quotable.io/random')
+      .then(val => val.json());
   }
 
   ngOnDestroy() {
-    this.subscriptionHandling.unsubscribe();
+    this.intervalSubscription.unsubscribe();
   }
 
 }

@@ -2,15 +2,23 @@
 <hr class="mx-2 mb-4 mt-2" />
 
 <div class="mb-4 p-2 center ml-4 w-50">
-    <h5>Random Quotes <span class="badge rounded-pill bg-info text-dark ml-2">Change every 5s</span></h5>
+    <h5>Random Quotes <span class="badge rounded-pill bg-info text-dark ml-2">Changes every 5s</span></h5>
     <br />
     <br />
-    <button class="btn btn-success mr-4" [disabled]="isDisabled" (click)="onSubscribe()">
-        Subscribe
+    <button class="btn btn-success mr-4" [disabled]="isDisabled" (click)="onSubscribe('Interval')">
+        Subscribe using Interval
     </button>
+
+    <button class="btn btn-success mr-4" [disabled]="isDisabled" (click)="onSubscribe('Timer')">
+        Subscribe using Timer
+    </button>
+
     <button class="btn btn-danger" [disabled]="!isDisabled" (click)="onUnsubscribe()">
         Unsubscribe
     </button>
+
+    <hr class="mx-2">
+    <p id="timerInfo" class="ml-2 mt-2"></p>
 </div>
 <h4 class="ml-4" *ngIf="quoteData === undefined">
     Get inspired by some amazing quotes!
