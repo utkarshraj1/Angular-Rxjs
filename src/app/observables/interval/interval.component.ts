@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { interval, Subscription } from 'rxjs';
 
 @Component({
@@ -6,7 +6,7 @@ import { interval, Subscription } from 'rxjs';
   templateUrl: './interval.component.html',
   styleUrls: ['./interval.component.scss']
 })
-export class IntervalComponent implements OnInit {
+export class IntervalComponent implements OnInit, OnDestroy {
 
   getQuote: any;
   quoteData: any;
@@ -48,6 +48,10 @@ export class IntervalComponent implements OnInit {
     // console.log('Unsubscribed!');
     this.subscriptionHandling.unsubscribe();
     this.quoteData = undefined;
+  }
+
+  ngOnDestroy() {
+    this.subscriptionHandling.unsubscribe();
   }
 
 }
