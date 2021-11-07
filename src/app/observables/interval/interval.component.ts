@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnDestroy, OnInit, ValueProvider, ViewChild } from '@angular/core';
 import { interval, Subscription, timer } from 'rxjs';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-interval',
@@ -11,11 +12,10 @@ export class IntervalComponent implements OnInit, OnDestroy {
   getQuote: any;
   quoteData: any;
   intervalSubscription!: Subscription;
-  timerSubscription!: Subscription;
   isDisabled!: boolean;
   // @ViewChild('subscribe') subscribe!: ElementRef;
 
-  constructor() { }
+  constructor(private shared: SharedService) { }
 
   ngOnInit(): void {
     this.isDisabled = false;
@@ -38,7 +38,7 @@ export class IntervalComponent implements OnInit, OnDestroy {
     // console.log('Subscription start!');
     this.intervalSubscription = this.getQuote.subscribe((res: any) => {
       // console.log(res);
-      this.fetchResponse().then(response => {
+      this.shared.fetchAPI('https://api.quotable.io/random').then(response => {
         // console.log(response);
         this.quoteData = response;
       });
@@ -52,11 +52,6 @@ export class IntervalComponent implements OnInit, OnDestroy {
     this.intervalSubscription.unsubscribe();
     this.quoteData = undefined;
     document.getElementById('timerInfo')!.innerHTML = '';
-  }
-
-  fetchResponse(): Promise<any> {
-    return fetch('https://api.quotable.io/random')
-      .then(val => val.json());
   }
 
   ngOnDestroy() {
