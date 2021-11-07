@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { carValue } from '../config/car-values.config';
 import { Car } from '../model/car.model';
+import { SharedService } from '../services/shared.service';
 
 @Component({
   selector: 'app-async-await',
@@ -26,7 +27,7 @@ export class AsyncAwaitComponent implements OnInit {
   startUrl: string = 'https://jsonplaceholder.typicode.com/photos'
   initialMessage: string = 'Get personalized list of cars, whose loan can be processed.';
 
-  constructor() { }
+  constructor(private shared: SharedService) { }
 
   ngOnInit(): void {
     this.output1 = this.initialMessage;
@@ -113,7 +114,7 @@ export class AsyncAwaitComponent implements OnInit {
     this.randomNum = Math.floor(Math.random() * 5000) + 1;
     let url = `${this.startUrl}/${this.randomNum}`;
 
-    this.fetchAPI(url).then((response) => {
+    this.shared.fetchAPI(url).then((response) => {
       this.output3 = response;
       // console.log(this.output3);
     });
@@ -123,13 +124,8 @@ export class AsyncAwaitComponent implements OnInit {
     this.randomNum = Math.floor(Math.random() * 5000) + 1;
     let url = `${this.startUrl}/${this.randomNum}`;
 
-    const res = await this.fetchAPI(url);
+    const res = await this.shared.fetchAPI(url);
     this.output3 = await res;
-  }
-
-  fetchAPI(url: string): Promise<any> {
-    return fetch(url)
-      .then(res => res.json());
   }
 }
 
