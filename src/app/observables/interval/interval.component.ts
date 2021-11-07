@@ -7,7 +7,7 @@ import { SharedService } from 'src/app/services/shared.service';
   templateUrl: './interval.component.html',
   styleUrls: ['./interval.component.scss']
 })
-export class IntervalComponent implements OnInit, OnDestroy {
+export class IntervalComponent implements OnInit {
 
   getQuote: any;
   quoteData: any;
@@ -54,8 +54,8 @@ export class IntervalComponent implements OnInit, OnDestroy {
     document.getElementById('timerInfo')!.innerHTML = '';
   }
 
-  ngOnDestroy() {
-    this.intervalSubscription.unsubscribe();
-  }
+  // ngOnDestroy() {
+  //   this.intervalSubscription.unsubscribe();
+  // }
 
 }
