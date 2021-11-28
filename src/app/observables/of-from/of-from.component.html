@@ -1,1 +1,12 @@
-<p>of-from works!</p>
+<h2 class="mt-4 ml-4">Of and From</h2>
+<hr class="mx-2 mb-4 mt-2">
+
+<div class="mb-4 p-2 center ml-4 w-50">
+    <strong class="ml-4">Enter number of spinners:</strong>
+    <input type="text" placeholder="Enter" class="form-control w-25 mt-2 ml-4" [(ngModel)] = "count">
+    <button class="btn btn-info mt-2 ml-4" (click)="clickToAdd()">Submit Here</button>
+    <hr class="mx-2">
+    <div class="d-flex justify-content-center" id="spinner-container">
+    </div>
+    <!-- <p id="timerInfo" class="ml-2 mt-2">Paragraph</p> -->
+</div>
