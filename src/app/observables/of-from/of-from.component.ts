@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-of-from',
@@ -9,9 +10,9 @@ export class OfFromComponent implements OnInit {
 
   count: any;
 
-  constructor() {
+  constructor(private shared: SharedService) {
     this.count = null;
-   }
+  }
 
   ngOnInit(): void {
   }
@@ -20,15 +21,14 @@ export class OfFromComponent implements OnInit {
 
     document.querySelectorAll(".spinner-border").forEach(el => el.remove());
 
-    for(let i = 1; i<=this.count; i++ ) {
+    for (let i = 1; i <= this.count; i++) {
       this.appendSpinner();
     }
   }
 
   appendSpinner(): void {
-    let element = document.createElement('div');
-    element.setAttribute('class','spinner-border text-success ml-1');
-    document.getElementById('spinner-container')!.appendChild(element);
+    this.shared.appendElementUsingJS('div', 'spinner-border text-success ml-1',
+      'spinner-container');
   }
 
 }

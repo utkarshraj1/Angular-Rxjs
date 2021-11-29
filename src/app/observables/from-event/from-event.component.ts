@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { fromEvent } from 'rxjs';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-from-event',
@@ -12,7 +13,7 @@ export class FromEventComponent implements OnInit, AfterViewInit {
   inputData: string;
   defaultListSel!: string;
 
-  constructor() { 
+  constructor(private shared: SharedService) {
     this.inputData = '';
   }
 
@@ -28,13 +29,9 @@ export class FromEventComponent implements OnInit, AfterViewInit {
     });
   }
 
-  addData():void {
-    let element = document.createElement('li');
-    element.setAttribute('class', 'list-group-item list-group-item-action');
-    // console.log(element.classList);
-    element.innerText = this.inputData;
-
-    document.getElementById(this.defaultListSel)?.appendChild(element);
+  addData(): void {
+    this.shared.appendElementUsingJS('li', 'list-group-item list-group-item-action',
+      this.defaultListSel, this.inputData);
   }
 
 }
