@@ -20,5 +20,6 @@ export class SharedService {
 
     if (message !== undefined) { element.innerText = message; }
     document.getElementById(id)?.appendChild(element);
+
   }
 }
