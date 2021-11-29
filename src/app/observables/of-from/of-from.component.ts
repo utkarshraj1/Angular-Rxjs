@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { from, of } from 'rxjs';
 import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
@@ -17,13 +18,15 @@ export class OfFromComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  clickToAdd(): void {
-
+  clickToAdd(trigger: string): void {
+    let countArray = [];
     document.querySelectorAll(".spinner-border").forEach(el => el.remove());
 
-    for (let i = 1; i <= this.count; i++) {
-      this.appendSpinner();
+    for (var i = 1; i <= this.count; i++) {
+      countArray.push(i);
     }
+    trigger === 'Of' ? this.subscribeUsingOf(countArray)
+      : this.subscribeUsingFrom(countArray);
   }
 
   appendSpinner(): void {
@@ -31,4 +34,20 @@ export class OfFromComponent implements OnInit {
       'spinner-container');
   }
 
+  subscribeUsingOf(arr: any): void {
+    console.log('Of');
+    of(...arr).subscribe((res: any) => {
+      // console.log(res);
+      this.appendSpinner();
+    }).unsubscribe();
+  }
+
+  subscribeUsingFrom(arr: any): void {
+    console.log('From');
+    from(arr).subscribe((res: any) => {
+      // console.log(res);
+      this.appendSpinner();
+    }).unsubscribe();
+  }
 }
+
