@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { from, of } from 'rxjs';
+import { from, Observable, of } from 'rxjs';
 import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
@@ -10,9 +10,13 @@ import { SharedService } from 'src/app/services/shared.service';
 export class OfFromComponent implements OnInit {
 
   count: any;
+  strLen: number;
+  value: string = '';
+  allCategoryUrl: string = 'https://fakestoreapi.com/products/categories';
 
   constructor(private shared: SharedService) {
     this.count = null;
+    this.strLen = 0;
   }
 
   ngOnInit(): void {
@@ -25,8 +29,8 @@ export class OfFromComponent implements OnInit {
     for (var i = 1; i <= this.count; i++) {
       countArray.push(i);
     }
-    trigger === 'Of' ? this.subscribeUsingOf(countArray)
-      : this.subscribeUsingFrom(countArray);
+    trigger === 'Of' ? this.subscribeUsingOf(countArray).subscribe((res: any) => { this.appendSpinner(); })
+      : this.subscribeUsingFrom(countArray).subscribe((res: any) => { this.appendSpinner(); });
   }
 
   appendSpinner(): void {
@@ -34,20 +38,33 @@ export class OfFromComponent implements OnInit {
       'spinner-container');
   }
 
-  subscribeUsingOf(arr: any): void {
-    console.log('Of');
-    of(...arr).subscribe((res: any) => {
+  getAllCategories(): void {
+    const promRes = this.shared.fetchAPI(this.allCategoryUrl);
+    const subs = this.subscribeUsingFrom(promRes).subscribe((res: any) => {
       // console.log(res);
-      this.appendSpinner();
-    }).unsubscribe();
+      document.querySelectorAll(".list-group-item").forEach(el => el.remove());
+      res.forEach((val: string) => {
+        this.shared.appendElementUsingJS('button', 'list-group-item list-group-item-action', 'list', val);
+      });
+    });
   }
 
-  subscribeUsingFrom(arr: any): void {
-    console.log('From');
-    from(arr).subscribe((res: any) => {
+  countStringLen(): void {
+    this.strLen = 0;
+    const subs1 = this.subscribeUsingFrom(this.value).subscribe((res: string) => {
       // console.log(res);
-      this.appendSpinner();
-    }).unsubscribe();
+      this.strLen++;
+    });
+  }
+
+  subscribeUsingOf(arr: any): Observable<any> {
+    console.log('Of');
+    return of(...arr);
+  }
+
+  subscribeUsingFrom(arr: any): Observable<any> {
+    console.log('From');
+    return from(arr);
   }
 }
 

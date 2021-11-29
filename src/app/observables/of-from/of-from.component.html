@@ -12,3 +12,19 @@
     </div>
     <!-- <p id="timerInfo" class="ml-2 mt-2">Paragraph</p> -->
 </div>
+
+<div class="mb-4 p-2 center ml-4 w-50">
+    <h4 class="ml-4 mb-2">Getting data from API</h4>
+    <button class="btn btn-toolbar p-1 ml-4 mb-2" (click)="getAllCategories()">Click to get all categories</button>
+
+    <div id="list" class="list-group mx-4 mb-2">
+    </div>
+</div>
+
+<div class="mb-4 p-2 center ml-4 w-50">
+    <h4 class="ml-4 mb-2">Enter String value</h4>
+    <input type="text" placeholder="Enter" class="form-control w-50 mt-2 ml-4" [(ngModel)]="value">
+    <button class="btn btn-primary p-1 ml-4 my-2" (click)="countStringLen()">Count String Length</button>
+    <hr *ngIf="strLen!==0">
+    <strong *ngIf="strLen!==0" class="mx-4 mb-2">The String length is : {{strLen}}</strong>
+</div>
