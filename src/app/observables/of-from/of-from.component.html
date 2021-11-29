@@ -2,9 +2,11 @@
 <hr class="mx-2 mb-4 mt-2">
 
 <div class="mb-4 p-2 center ml-4 w-50">
+    <h4 class="m-2 ml-4">Spinner Adder</h4>
     <strong class="ml-4">Enter number of spinners:</strong>
-    <input type="text" placeholder="Enter" class="form-control w-25 mt-2 ml-4" [(ngModel)] = "count">
-    <button class="btn btn-info mt-2 ml-4" (click)="clickToAdd()">Submit Here</button>
+    <input type="text" placeholder="Enter" class="form-control w-25 mt-2 ml-4" [(ngModel)]="count">
+    <button class="btn btn-info mt-2 ml-4" (click)="clickToAdd('Of')">Of Operator</button>
+    <button class="btn btn-primary mt-2 ml-4" (click)="clickToAdd('From')">From Operator</button>
     <hr class="mx-2">
     <div class="d-flex justify-content-center" id="spinner-container">
     </div>
