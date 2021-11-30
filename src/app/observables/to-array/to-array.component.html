@@ -1,1 +1,15 @@
-<p>to-array works!</p>
+<h2 class="ml-4 mt-4">To Array</h2>
+<hr class="mx-2 mb-4 mt-2">
+
+<div class="center w-50 ml-4">
+    <strong class="mx-4 my-2">Click to generate random number (btw 1 and 10):</strong>
+    <button class="btn btn-outline-primary ml-4 mt-2 p-1" (click)="getRandom()">Click</button>
+    <hr class="mx-2">
+    <p class="mx-4 mt-2" *ngIf="random!==0">This response will be fetched in <span class="badge rounded-pill"
+            [class.bg-success]="random>5" [class.bg-danger]="random<=5">{{random}}</span> sec
+    </p>
+
+    <ul class="list-group list-group-flush mx-4 my-2 w-50" *ngFor="let val of totalData">
+        <li class="list-group-item"><strong>Value:</strong> {{val+1}}</li>
+    </ul>
+</div>
