@@ -1,1 +1,27 @@
-<p>custom-observable works!</p>
+<h2 class="ml-4 mt-4">Custom Observable</h2>
+<hr class="mx-2 my-2">
+
+<div class="my-4 ml-4 center">
+    <span class="ml-4">Enter your card limit: </span>
+    <input class="form-control w-50 mt-2 ml-4" type="text" [(ngModel)]="limit" placeholder="Enter here...">
+    <button type="button" class="btn btn-outline-success mt-2 ml-4" (click)="limitCheck()">Click here</button>
+    <br>
+    <hr>
+    <!-- <button type="button" class="btn btn-outline-info mt-2 ml-4" (click)="completeSubscription()">Click here</button> -->
+    <!-- <strong>Check the console for the data!</strong> -->
+    <strong class=" mt-2 ml-4 text-white badge rounded-pill bg-danger p-1"
+        *ngIf="errorMessage.length!==0">{{errorMessage}}</strong>
+    <ng-container *ngIf="emittedCarData.length!==0">
+        <div *ngFor="let data of emittedCarData" class="card card-values mt-2 ml-4">
+            <div class="card-header">
+                <strong>{{data.maker}}</strong>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Car:</strong> {{data.car}}</li>
+                <li class="list-group-item"><strong>Origin:</strong> {{data.origin}}</li>
+                <li class="list-group-item"><strong>Launched Date:</strong> {{data.launched}}</li>
+                <li class="list-group-item"><strong>On Road Price:</strong> {{data.price}}</li>
+            </ul>
+        </div>
+    </ng-container>
+</div>
