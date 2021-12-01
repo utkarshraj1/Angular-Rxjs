@@ -41,6 +41,10 @@ export class CustomObservableComponent implements OnInit {
   limitCheck(): void {
     this.emittedCarData = [];
     this.errorMessage = '';
+    if (this.limit === undefined) {
+      this.errorMessage = 'Please enter a valid card limit.';
+      return;
+    }
     let observableData = this.customObservableMethod(this.limit);
     this.subscription = observableData.subscribe(
       (res) => {
