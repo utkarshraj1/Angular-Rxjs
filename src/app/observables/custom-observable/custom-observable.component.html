@@ -5,13 +5,13 @@
     <div class="my-4 ml-4 center col-md-5">
         <span class="ml-4">Enter your card limit: </span>
         <input class="form-control w-50 mt-2 ml-4" type="text" [(ngModel)]="limit" placeholder="Enter here...">
-        <button type="button" class="btn btn-outline-success mt-2 ml-4" (click)="limitCheck()">Click here</button>
+        <button type="button" class="btn btn-outline-success mt-2 ml-4" (click)="limitCheck()">Search</button>
         <br>
         <hr>
         <!-- <button type="button" class="btn btn-outline-info mt-2 ml-4" (click)="completeSubscription()">Click here</button> -->
         <!-- <strong>Check the console for the data!</strong> -->
         <strong class=" mt-2 ml-4 text-white badge rounded-pill bg-danger p-1"
-            *ngIf="errorMessage.length!==0">{{errorMessage}}</strong>
+            *ngIf="errorMessage.length!==0 && this.emittedCarData.length===0">{{errorMessage}}</strong>
         <ng-container *ngIf="emittedCarData.length!==0">
             <div *ngFor="let data of emittedCarData" class="card card-values mt-2 ml-4">
                 <div class="card-header">
@@ -26,7 +26,27 @@
             </div>
         </ng-container>
     </div>
+
     <div class="my-4 ml-4 center col-md-5">
-        <h2>2nd Div for different implementation</h2>
+        <!-- <h2>2nd Div for different implementation</h2> -->
+        <strong class="ml-4 mt-2">Custom Interval <span class="badge rounded-pill bg-info text-dark ml-4">Changes every
+                5s</span></strong>
+        <br>
+        <button class="btn btn-success ml-4 my-4" (click)="unlimitedQuote()">Click for Quotes</button>
+        <button class="btn btn-danger ml-3" (click)="unsubscribeQuote()">Unsubscribe</button>
+        <h5 class="ml-4" *ngIf="quote === null">
+            Get inspired by some amazing quotes!
+        </h5>
+        <div class="card ml-4 w-50 mb-4" *ngIf="quote !== null">
+            <div class="card-header">Quote</div>
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                    <p>{{ quote.content }}</p>
+                    <footer class="blockquote-footer">
+                        <cite title="Source Title">{{ quote.author }}</cite>
+                    </footer>
+                </blockquote>
+            </div>
+        </div>
     </div>
 </div>
