@@ -15,12 +15,15 @@ export class CustomObservableComponent implements OnInit {
   limit!: number;
   emittedCarData: Array<Car>;
   errorMessage: string;
+  quote: any;
 
   subscription!: Subscription;
+  qSubscription!: Subscription;
 
-  constructor() {
+  constructor(private shared: SharedService) {
     this.emittedCarData = [];
     this.errorMessage = '';
+    this.quote = null;
   }
 
   ngOnInit(): void {
@@ -45,6 +48,7 @@ export class CustomObservableComponent implements OnInit {
       this.errorMessage = 'Please enter a valid card limit.';
       return;
     }
+    // let observableData = this.customInterval(this.limit);
     let observableData = this.customObservableMethod(this.limit);
     this.subscription = observableData.subscribe(
       (res) => {
@@ -58,5 +62,37 @@ export class CustomObservableComponent implements OnInit {
     );
     // console.log(this.subscription);
     // this.subscription.unsubscribe();
+  }
+
+  customInterval(): Observable<any> {
+    return Observable.create((subscriber: any) => {
+      setInterval(() => {
+        subscriber.next('5000 ms waited');
+      }, 5000);
+    });
+  }
+
+  unlimitedQuote(): void {
+    this.quote = {
+      content: "Declare variables not war!",
+      author: "Unknown"
+    };
+    let qObservable = this.customInterval();
+    this.qSubscription = qObservable.subscribe((res) => {
+      // console.log(res);
+      this.shared.getData('https://api.quotable.io/random').subscribe((res) => {
+        this.quote = res;
+        // console.log(this.quote);
+      });
+    });
+  }
+
+  unsubscribeQuote(): void {
+    this.quote = null;
+    this.qSubscription.unsubscribe();
+  }
+
+  ngOnDestroy(): void {
+    this.unsubscribeQuote();
   }
 }
