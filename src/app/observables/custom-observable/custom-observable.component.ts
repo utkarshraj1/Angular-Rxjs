@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Car } from 'src/app/model/car.model';
 import { carValue } from 'src/app/config/car-values.config'
 import { SharedService } from 'src/app/services/shared.service';
@@ -9,7 +9,7 @@ import { Observable, Subscription } from 'rxjs';
   templateUrl: './custom-observable.component.html',
   styleUrls: ['./custom-observable.component.scss']
 })
-export class CustomObservableComponent implements OnInit {
+export class CustomObservableComponent implements OnInit, OnDestroy {
 
   carData: Array<Car> = carValue;
   limit!: number;
@@ -93,6 +93,8 @@ export class CustomObservableComponent implements OnInit {
   }
 
   ngOnDestroy(): void {
-    this.unsubscribeQuote();
+    if (this.qSubscription !== undefined) {
+      this.unsubscribeQuote();
+    }
   }
 }
