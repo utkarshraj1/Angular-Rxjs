@@ -1,1 +1,21 @@
-<p>pluck works!</p>
+<h2 class="ml-4 mt-4">Pluck</h2>
+<hr class="mx-2 mb-4 mt-2">
+<div class="d-flex justify-content-center align-items-center" style="flex-direction: column;">
+    <div class="center w-50 p-2 ml-4 d-flex justify-content-center align-items-center">
+        <img src="../../../assets/images/doge.png" alt="Doge" width="200" height="200">
+        <br>
+        <strong class="my-2">How many Doge Memes you want to see?</strong>
+        <input class="form-control me-2 w-50" type="search" placeholder="Enter" aria-label="Search"
+            [(ngModel)]="memeCount">
+        <button class="btn btn-success mt-2" (click)="searchMeme()">Click to Search</button>
+    </div>
+    <div class="card w-50 my-3 ml-4" *ngFor="let meme of memeData">
+        <img [src]="meme.submission_url" class="card-img-top" alt="Doge Meme">
+        <div class="card-body">
+            <h5 class="card-title">{{meme.submission_title}}</h5>
+            <p class="card-text">{{meme.author}}</p>
+            <p class="card-text">{{meme.permalink}}</p>
+            <p class="card-text"><small class="text-muted">{{meme.created}}</small></p>
+        </div>
+    </div>
+</div>
