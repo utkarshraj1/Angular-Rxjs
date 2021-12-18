@@ -1,0 +1,22 @@
+<h2 class="ml-4 mt-4">Map</h2>
+<hr class="mx-2 mt-2">
+
+<div class="center w-50 ml-4 my-4">
+    <h4 class="my-2 ml-2">Which country does he/she belong?</h4>
+    <div class="p-2 ml-2 mb-2">
+        <strong>Enter Name: </strong><input class="form-control me-2 w-50" type="search" placeholder="Enter"
+            [(ngModel)]="name" aria-label="Search">
+        <button class="mt-2 btn btn-outline-success" type="submit" (click)="search()">Find</button>
+    </div>
+</div>
+
+<div class="card w-25 ml-4 mb-4" *ngIf="responseData.name!==''">
+    <div class="card-header">
+        <strong>{{responseData.name}}</strong>
+    </div>
+    <ul class="list-group list-group-flush" *ngFor="let response of responseData.country">
+        <li class="list-group-item">Country: <strong>{{response.country_id}}</strong> | Probability:
+            <strong>{{response.probability}}</strong>
+        </li>
+    </ul>
+</div>
