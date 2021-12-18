@@ -5,6 +5,7 @@ import { CustomObservableComponent } from './observables/custom-observable/custo
 import { FromEventComponent } from './observables/from-event/from-event.component';
 import { IntervalComponent } from './observables/interval/interval.component';
 import { ListComponent } from './observables/list/list.component';
+import { MapComponent } from './observables/map/map.component';
 import { ObservablesComponent } from './observables/observables.component';
 import { OfFromComponent } from './observables/of-from/of-from.component';
 import { ToArrayComponent } from './observables/to-array/to-array.component';
@@ -21,7 +22,8 @@ const routes: Routes = [
       { path: 'interval', component: IntervalComponent },
       { path: 'of-from', component: OfFromComponent },
       { path: 'to-array', component: ToArrayComponent },
-      { path: 'custom-observable', component: CustomObservableComponent }
+      { path: 'custom-observable', component: CustomObservableComponent },
+      { path: 'map', component: MapComponent }
     ],
   },
   { path: 'asyncAwait', component: AsyncAwaitComponent },
