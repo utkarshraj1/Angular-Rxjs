@@ -32,7 +32,7 @@ export class MapComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.subsValue.unsubscribe();
+    if (this.subsValue !== undefined) { this.subsValue.unsubscribe(); }
   }
 
   search(): void {
