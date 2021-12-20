@@ -1,2 +1,23 @@
 <h2 class="ml-4 mt-4">Filter</h2>
 <hr class="mx-2 mt-2">
+
+<div class="center ml-4 mt-4 w-50 p-4">
+    <strong>Enter Minima:</strong> <input class="form-control me-2 w-50" type="search" placeholder="Minima"
+        [(ngModel)]="dataObj.min">
+    <strong>Enter Maxima:</strong> <input class="form-control me-2 w-50" type="search" placeholder="Maxima"
+        [(ngModel)]="dataObj.max">
+
+    <button class="btn btn-success mt-4" (click)="getPhotosFromAPI()">Click to Get</button>
+</div>
+
+<ng-container *ngFor="let data of photosData">
+    <div class="card ml-4 mt-2 w-50">
+        <div class="card-body">
+            <h5 class="card-title">{{data.title}}</h5>
+            <p class="card-text">Album ID: {{data.albumId}}</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+        <img style="border: 1px solid black;" [src]="data.thumbnailUrl" class="card-img-bottom m-auto image"
+            alt="Thumbnail">
+    </div>
+</ng-container>
