@@ -10,6 +10,7 @@ import { MapComponent } from './observables/map/map.component';
 import { ObservablesComponent } from './observables/observables.component';
 import { OfFromComponent } from './observables/of-from/of-from.component';
 import { PluckComponent } from './observables/pluck/pluck.component';
+import { TapComponent } from './observables/tap/tap.component';
 import { ToArrayComponent } from './observables/to-array/to-array.component';
 import { PromiseComponent } from './promise/promise.component';
 
@@ -27,7 +28,8 @@ const routes: Routes = [
       { path: 'custom-observable', component: CustomObservableComponent },
       { path: 'map', component: MapComponent },
       { path: 'pluck', component: PluckComponent },
-      { path: 'filter', component: FilterComponent }
+      { path: 'filter', component: FilterComponent },
+      { path: 'tap', component: TapComponent }
     ],
   },
   { path: 'asyncAwait', component: AsyncAwaitComponent },
