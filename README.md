@@ -1,14 +1,18 @@
-# Angular Rxjs Project
+# Angular RxJS Project
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.6.
 
 ## Development server
 
-Run `npm start` for a dev server. Navigate to `http://localhost:1309/`. The app will automatically reload if you change any of the source files.
+Run `npm start` for a dev server. It will automatically open `http://localhost:1309/` in the default browser. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Implementation Details
+
+The application includes usage of Bootstrap 5 for stylings. The RxJS implementation is done in the code level. 
 
 ## Build
 
