@@ -1,2 +1,22 @@
 <h2 class="ml-4 mt-4">Tap</h2>
 <hr class="mx-2 mt-2">
+
+<div class="d-flex justify-content-center align-items-center">
+    <div class="d-flex justify-content-center align-items-center mt-4 p-4 center">
+        <strong class="mr-2">Click below to get 10 best jokes!!</strong>
+        <button class="btn btn-info mt-2" (click)="getJoke()">Click Here</button>
+    </div>
+</div>
+<strong class="ml-4 my-4">Check console for getting the logger message of tap</strong>
+<div class="d-flex justify-content-center align-items-center">
+    <div class="w-75 row ml-4 mt-4">
+        <div class="card text-white bg-secondary mr-2 mb-2 col-sm-3" style="max-height: 25rem;"
+            *ngFor="let joke of jokeData">
+            <div class="card-header">Category: {{joke.category}}</div>
+            <div class="card-body">
+                <h5 class="card-text">{{joke.setup}}</h5>
+                <p class="card-text">{{joke.delivery}}</p>
+            </div>
+        </div>
+    </div>
+</div>
