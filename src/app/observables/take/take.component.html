@@ -1,0 +1,49 @@
+<h2 class="ml-4 mt-4">Take</h2>
+<hr class="mx-2 mt-2">
+
+<div class="row w-100 pl-4">
+    <div class="col-sm-4 center p-2">
+        <strong>Take</strong>
+        <hr>
+        <span class="mt-4">Enter number of trivia you want to see:</span>
+        <input class="form-control w-50 mt-2" type="search" placeholder="Enter the maxima" [(ngModel)]="inputVal1">
+        <button class="btn btn-outline-secondary mt-2" (click)="getNumberTrivia('take')">Get Trivia</button>
+        <hr>
+
+        <div class="list-group">
+            <ul id="take">
+            </ul>
+        </div>
+    </div>
+    <div class="col-sm-4 center p-2">
+        <strong>TakeUntil</strong>
+        <hr>
+        <button class="btn btn-danger" #stop>Click to Stop the Trivia</button>
+        <br>
+        <button class="btn btn-outline-secondary mt-2" (click)="getNumberTrivia('takeUntil')">Get Trivia</button>
+        <hr>
+
+        <div class="list-group">
+            <ul id="takeUntil">
+            </ul>
+        </div>
+    </div>
+    <div class="col-sm-4 center p-2">
+        <strong>TakeWhile</strong>
+        <hr>
+        <div class="alert alert-primary" role="alert">
+            Click on "Stop" to stop the random trivia rightaway, then click on "Start" and then click on "Get Trivia"
+            for
+            getting the trivia again.
+        </div>
+        <button class="btn ml-4" [ngClass]="selectedChoice ? 'btn-outline-danger' : 'btn-outline-success'"
+            (click)="selectedChoice = !selectedChoice">{{ selectedChoice ? 'Stop' : 'Start' }}</button>
+        <button class="btn btn-outline-secondary ml-4" (click)="getNumberTrivia('takeWhile')">Get Trivia</button>
+        <hr>
+
+        <div class="list-group">
+            <ul id="takeWhile">
+            </ul>
+        </div>
+    </div>
+</div>
