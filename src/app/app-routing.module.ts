@@ -10,6 +10,7 @@ import { MapComponent } from './observables/map/map.component';
 import { ObservablesComponent } from './observables/observables.component';
 import { OfFromComponent } from './observables/of-from/of-from.component';
 import { PluckComponent } from './observables/pluck/pluck.component';
+import { TakeComponent } from './observables/take/take.component';
 import { TapComponent } from './observables/tap/tap.component';
 import { ToArrayComponent } from './observables/to-array/to-array.component';
 import { PromiseComponent } from './promise/promise.component';
@@ -29,11 +30,13 @@ const routes: Routes = [
       { path: 'map', component: MapComponent },
       { path: 'pluck', component: PluckComponent },
       { path: 'filter', component: FilterComponent },
-      { path: 'tap', component: TapComponent }
+      { path: 'tap', component: TapComponent },
+      { path: 'take', component: TakeComponent },
+      { path: '**', redirectTo: '', pathMatch: 'full' }
     ],
   },
   { path: 'asyncAwait', component: AsyncAwaitComponent },
-  { path: '', redirectTo: 'promise', pathMatch: 'full' },
+  { path: '**', redirectTo: 'promise', pathMatch: 'full' },
 ];
 
 @NgModule({

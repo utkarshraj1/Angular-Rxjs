@@ -7,10 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  isPromise: boolean;
-  constructor() { 
-    this.isPromise = true;
-  }
+  constructor() { }
 
   ngOnInit(): void {
   }
