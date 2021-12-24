@@ -1,10 +1,11 @@
 <h2 class="ml-4 mt-4">Retry</h2>
+<strong class="ml-4 mt-1">(Check console after turning internet off.)</strong>
 <hr class="mt-2 mx-2">
 <div class="row w-100 pl-4">
     <div class="col-sm-6 center">
         <h5 class="ml-2 mt-2">Retry</h5>
         <hr class="mx-1">
-        <button class="btn btn-info ml-4 mb-2" type="button" (click)="getCoffeeWithRetry()">
+        <button class="btn btn-info ml-4 mb-2" type="button" (click)="getJokeWithRetry()">
             <span *ngIf="loading1" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
             {{loading1 ? "" : "Load Random Jokes"}}
         </button>
@@ -31,5 +32,27 @@
     <div class="col-sm-6 center">
         <h5 class="ml-2 mt-2">RetryWhen</h5>
         <hr class="mx-1">
+        <button class="btn btn-info ml-4 mb-2" type="button" (click)="getJokeWithRetryWhen()">
+            <span *ngIf="loading2" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+            {{loading2 ? "" : "Load Random Jokes"}}
+        </button>
+        <br>
+        <span class="ml-4"
+            [ngClass]="message2 === 'Failed to load the data.' ? 'text-danger' : message2 === 'Loaded.' ? 'text-success' : message2.includes('Retrying') ? 'text-warning' : 'text-secondary'">
+            <strong>{{message2}}</strong>
+        </span>
+        <span *ngIf="loading2" class="spinner-border spinner-border-sm ml-2 text-secondary" role="status"
+            aria-hidden="true"></span>
+        <hr class="mx-1">
+        <div class="row p-1">
+            <div class="card col-6 p-2" [ngClass]="!joke.safe ? 'border-warning' : 'border-light'"
+                *ngFor="let joke of jsonRes2">
+                <h5 class="card-header">{{joke.category}}</h5>
+                <div class="card-body">
+                    <h5 class="card-title">{{joke.setup}}</h5>
+                    <p class="card-text">{{joke.delivery}}</p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

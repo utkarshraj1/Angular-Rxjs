@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { interval, Subscription } from 'rxjs';
 import { take, toArray } from 'rxjs/operators';
 
@@ -7,7 +7,7 @@ import { take, toArray } from 'rxjs/operators';
   templateUrl: './to-array.component.html',
   styleUrls: ['./to-array.component.scss']
 })
-export class ToArrayComponent implements OnInit {
+export class ToArrayComponent implements OnInit, OnDestroy {
 
   totalData: Array<number>;
   random: number;
@@ -20,7 +20,10 @@ export class ToArrayComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.unsubscriptionMethod();
+  }
+
+  ngOnDestroy(): void {
+    this.unsubscriptionMethod()
   }
 
   getRandom(): void {
