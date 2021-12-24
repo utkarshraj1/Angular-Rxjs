@@ -38,7 +38,7 @@ export class RetryComponent implements OnInit, OnDestroy {
     this.getSubscription = this.shared.getData(this._url).pipe(pluck('jokes'), retry(5))
       .subscribe(
         (res) => {
-          console.log(res);
+          // console.log(res);
           this.jsonRes1 = res;
           this.loading1 = false;
           this.message1 = 'Loaded.'
@@ -47,7 +47,8 @@ export class RetryComponent implements OnInit, OnDestroy {
           console.log('Uh, oh -> Error occured', err);
           this.loading1 = false;
           this.message1 = 'Facing issue while loading...'
-        });
+        }
+      );
   }
 
 }
