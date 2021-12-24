@@ -1,19 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { AsyncAwaitComponent } from './async-await/async-await.component';
+import { PromiseComponent } from './promise/promise.component';
+import { ObservablesComponent } from './observables/observables.component';
+
 import { CustomObservableComponent } from './observables/custom-observable/custom-observable.component';
 import { FilterComponent } from './observables/filter/filter.component';
 import { FromEventComponent } from './observables/from-event/from-event.component';
 import { IntervalComponent } from './observables/interval/interval.component';
 import { ListComponent } from './observables/list/list.component';
 import { MapComponent } from './observables/map/map.component';
-import { ObservablesComponent } from './observables/observables.component';
 import { OfFromComponent } from './observables/of-from/of-from.component';
 import { PluckComponent } from './observables/pluck/pluck.component';
+import { RetryComponent } from './observables/retry/retry.component';
 import { TakeComponent } from './observables/take/take.component';
 import { TapComponent } from './observables/tap/tap.component';
 import { ToArrayComponent } from './observables/to-array/to-array.component';
-import { PromiseComponent } from './promise/promise.component';
 
 const routes: Routes = [
   { path: 'promise', component: PromiseComponent },
@@ -32,6 +35,7 @@ const routes: Routes = [
       { path: 'filter', component: FilterComponent },
       { path: 'tap', component: TapComponent },
       { path: 'take', component: TakeComponent },
+      { path: 'retry', component: RetryComponent },
       { path: '**', redirectTo: '', pathMatch: 'full' }
     ],
   },
