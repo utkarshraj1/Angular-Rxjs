@@ -35,6 +35,10 @@ export class DebounceComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    this.findGender();
+  }
+
+  findGender(): void {
     this.debounceSubs = fromEvent<any>(this.input.nativeElement, 'keyup')
       .pipe(map(val => val.target.value), debounceTime(1000), distinctUntilChanged())
       .subscribe(val => {
