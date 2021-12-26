@@ -1,0 +1,26 @@
+<h2 class="ml-4 mt-4">DebounceTime & DistinctUntilChanged</h2>
+<hr class="mx-2 mt-2">
+
+<div class="d-flex justify-content-center align-items-center flex-column">
+    <div class="center p-3">
+        <h5 class="ml-2 mb-2"><span class="badge bg-secondary">Find Gender...</span></h5>
+        <hr>
+        <div class="input-group">
+            <span class="input-group-text" id="inputGroup-sizing-default">Enter Name</span>
+            <input #input type="text" class="form-control rounded" aria-label="Sizing example input" placeholder="..."
+                aria-describedby="inputGroup-sizing-default">
+        </div>
+    </div>
+    <div class="mt-4">
+        <div *ngIf="loading" class="spinner-grow text-dark" role="status">
+        </div>
+        <div class="card" style="width: 18rem;" *ngIf="!loading && genderRes.name!==''">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Name:</strong> {{genderRes.name}}</li>
+                <li class="list-group-item"><strong>Gender:</strong> {{genderRes.gender}}</li>
+                <li class="list-group-item"><strong>Probability (in %):</strong> {{genderRes.probability}}</li>
+                <li class="list-group-item"><strong>Count:</strong> {{genderRes.count}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
