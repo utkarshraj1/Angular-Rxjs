@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnDestroy, OnInit, ValueProvider, ViewChild } from '@angular/core';
 import { interval, Subscription, timer } from 'rxjs';
-import { SharedService } from 'src/app/services/shared.service';
+import { SharedService } from 'src/app/services/shared/shared.service';
 
 @Component({
   selector: 'app-interval',

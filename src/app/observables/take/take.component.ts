@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { fromEvent, interval, Subscription } from 'rxjs';
 import { take, takeUntil, takeWhile, tap } from 'rxjs/operators';
-import { SharedService } from 'src/app/services/shared.service';
+import { SharedService } from 'src/app/services/shared/shared.service';
 
 @Component({
   selector: 'app-take',

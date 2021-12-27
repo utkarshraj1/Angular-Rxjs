@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { fromEvent } from 'rxjs';
-import { SharedService } from 'src/app/services/shared.service';
+import { SharedService } from 'src/app/services/shared/shared.service';
 
 @Component({
   selector: 'app-from-event',

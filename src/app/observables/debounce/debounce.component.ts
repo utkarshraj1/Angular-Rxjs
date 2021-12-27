@@ -1,8 +1,8 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { fromEvent, Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
-import { IGender } from 'src/app/model/gender.model';
-import { SharedService } from 'src/app/services/shared.service';
+import { IGender } from 'src/app/shared-files/model/gender.model';
+import { SharedService } from 'src/app/services/shared/shared.service';
 
 @Component({
   selector: 'app-debounce',

@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Car } from 'src/app/model/car.model';
-import { carValue } from 'src/app/config/car-values.config'
-import { SharedService } from 'src/app/services/shared.service';
+import { Car } from 'src/app/shared-files/model/car.model';
+import { carValue } from 'src/app/shared-files/config/car-values.config'
+import { SharedService } from 'src/app/services/shared/shared.service';
 import { Observable, Subscription } from 'rxjs';
 
 @Component({

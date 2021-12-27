@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { delay, pluck, retry, retryWhen, scan } from 'rxjs/operators';
-import { SharedService } from 'src/app/services/shared.service';
+import { SharedService } from 'src/app/services/shared/shared.service';
 
 @Component({
   selector: 'app-retry',
@@ -66,17 +66,17 @@ export class RetryComponent implements OnInit, OnDestroy {
     this.jsonRes2 = [];
     this.message2 = 'Loading...!';
     this.getSubscription = this.shared.getData(this._url)
-      .pipe(retryWhen((notif) => notif.pipe(delay(5000),
+      .pipe(retryWhen((notif) => notif.pipe(delay(3500),
         scan((acc) => {
           if (acc > 5) {
             throw notif;
           }
           else {
-            acc++;
             this.message2 = `Retrying...#${acc}`;
+            acc += 1;
             return acc;
           }
-        }, 0))))
+        }, 1))))
       .subscribe(
         (res) => {
           // console.log(res);

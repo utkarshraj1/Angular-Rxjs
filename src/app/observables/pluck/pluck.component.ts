@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { pluck } from 'rxjs/operators';
-import { IDoge } from 'src/app/model/doge.model';
-import { SharedService } from 'src/app/services/shared.service';
+import { IDoge } from 'src/app/shared-files/model/doge.model';
+import { SharedService } from 'src/app/services/shared/shared.service';
 
 @Component({
   selector: 'app-pluck',

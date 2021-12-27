@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { from, Subscription } from 'rxjs';
 import { filter, toArray } from 'rxjs/operators';
-import { SharedService } from 'src/app/services/shared.service';
+import { SharedService } from 'src/app/services/shared/shared.service';
 
 @Component({
   selector: 'app-filter',

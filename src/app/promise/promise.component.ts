@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { carValue } from '../config/car-values.config';
-import { Car } from '../model/car.model';
+import { carValue } from '../shared-files/config/car-values.config';
+import { Car } from '../shared-files/model/car.model';
 
 @Component({
   selector: 'app-promise',
@@ -49,7 +49,7 @@ export class PromiseComponent implements OnInit {
   }
 
   search(com: string): void {
-    if(com.length === 0) {
+    if (com.length === 0) {
       this.isFirstTime = true;
       this.output = undefined;
       return;
