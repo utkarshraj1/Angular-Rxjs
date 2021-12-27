@@ -1,2 +1,13 @@
 <h4 class="ml-2 text-primary">Child B</h4>
 <hr class="mx-2 mt-2">
+<div class="card mt-1" style="width: 18rem;" *ngFor="let data of productType">
+    <img [src]="data.image_link" class="card-img-top" alt="product image">
+    <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Product: {{data.name}}</li>
+            <li class="list-group-item">Brand: {{data.brand}}</li>
+            <li class="list-group-item">Price: {{data.price}} {{data.currency}}</li>
+            <li class="list-group-item">Description: {{data.description}}</li>
+        </ul>
+    </div>
+</div>
