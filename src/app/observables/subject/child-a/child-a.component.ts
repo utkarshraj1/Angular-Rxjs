@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { SubjectsService } from 'src/app/services/subjects/subjects.service';
 
 @Component({
@@ -6,9 +7,8 @@ import { SubjectsService } from 'src/app/services/subjects/subjects.service';
   templateUrl: './child-a.component.html',
   styleUrls: ['./child-a.component.scss']
 })
-export class ChildAComponent implements OnInit {
+export class ChildAComponent implements OnInit, OnDestroy {
 
-  productType: string;
   productTypeData: Array<string> = [
     'Blush',
     'Bronzer',
@@ -17,16 +17,22 @@ export class ChildAComponent implements OnInit {
     'Eyeshadow',
     'Foundation'
   ];
+  productType!: string;
   loadingStatus!: string;
+  lSubjectSub!: Subscription;
 
-  constructor(private sub: SubjectsService) {
-    this.productType = 'Select here';
-  }
+  constructor(private sub: SubjectsService) { }
 
   ngOnInit(): void {
-    this.sub.loadStatus.subscribe(res => {
+    this.lSubjectSub = this.sub.loadStatus.subscribe(res => {
       this.loadingStatus = res;
     });
+  }
+
+  ngOnDestroy(): void {
+    if (this.lSubjectSub !== undefined) {
+      this.lSubjectSub.unsubscribe();
+    }
   }
 
   getProduct(): void {
