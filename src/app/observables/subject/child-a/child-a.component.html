@@ -1,2 +1,13 @@
 <h4 class="ml-2 text-primary">Child A</h4>
 <hr class="mx-2 mt-2">
+<strong class="mx-2">Select product type:</strong>
+<select class="rounded" [(ngModel)]="productType" aria-placeholder="Select Data">
+    <option *ngFor="let data of productTypeData" [value]="data">
+        {{data}}
+    </option>
+</select>
+<br>
+<button class="btn btn-primary ml-2 mt-2" (click)="getProduct()">Select</button>
+<hr>
+<strong [ngClass]="loadingStatus==='Loading...' ? 'text-primary' : 'text-success'">{{loadingStatus}}</strong>
+<div *ngIf="loadingStatus==='Loading...'" class="spinner-grow spinner-grow-sm text-primary" role="status"></div>
