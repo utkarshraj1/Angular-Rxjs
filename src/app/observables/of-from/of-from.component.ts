@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { from, Observable, of } from 'rxjs';
-import { SharedService } from 'src/app/services/shared.service';
+import { SharedService } from 'src/app/services/shared/shared.service';
 
 @Component({
   selector: 'app-of-from',

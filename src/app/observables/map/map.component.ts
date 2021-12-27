@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { IPerson } from 'src/app/model/person.model';
-import { SharedService } from 'src/app/services/shared.service';
+import { IPerson } from 'src/app/shared-files/model/person.model';
+import { SharedService } from 'src/app/services/shared/shared.service';
 
 @Component({
   selector: 'app-map',

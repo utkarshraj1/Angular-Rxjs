@@ -18,6 +18,7 @@ import { TakeComponent } from './observables/take/take.component';
 import { TapComponent } from './observables/tap/tap.component';
 import { ToArrayComponent } from './observables/to-array/to-array.component';
 import { DebounceComponent } from './observables/debounce/debounce.component';
+import { SubjectComponent } from './observables/subject/subject.component';
 
 const routes: Routes = [
   { path: 'promise', component: PromiseComponent },
@@ -38,6 +39,7 @@ const routes: Routes = [
       { path: 'take', component: TakeComponent },
       { path: 'retry', component: RetryComponent },
       { path: 'debounce', component: DebounceComponent },
+      { path: 'subject', component: SubjectComponent },
       { path: '**', redirectTo: '', pathMatch: 'full' }
     ],
   },

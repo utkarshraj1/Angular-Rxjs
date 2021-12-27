@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './includes/header/header.component';
+import { HeaderComponent } from './shared-files/header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PromiseComponent } from './promise/promise.component';
 import { FormsModule } from '@angular/forms';
@@ -23,6 +23,9 @@ import { TapComponent } from './observables/tap/tap.component';
 import { TakeComponent } from './observables/take/take.component';
 import { RetryComponent } from './observables/retry/retry.component';
 import { DebounceComponent } from './observables/debounce/debounce.component';
+import { SubjectComponent } from './observables/subject/subject.component';
+import { ChildAComponent } from './observables/subject/child-a/child-a.component';
+import { ChildBComponent } from './observables/subject/child-b/child-b.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +46,10 @@ import { DebounceComponent } from './observables/debounce/debounce.component';
     TapComponent,
     TakeComponent,
     RetryComponent,
-    DebounceComponent
+    DebounceComponent,
+    SubjectComponent,
+    ChildAComponent,
+    ChildBComponent
   ],
   imports: [
     BrowserModule,

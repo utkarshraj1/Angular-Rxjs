@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { carValue } from '../config/car-values.config';
-import { Car } from '../model/car.model';
-import { SharedService } from '../services/shared.service';
+import { carValue } from '../shared-files/config/car-values.config';
+import { Car } from '../shared-files/model/car.model';
+import { SharedService } from '../services/shared/shared.service';
 
 @Component({
   selector: 'app-async-await',
