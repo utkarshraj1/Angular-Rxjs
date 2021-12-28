@@ -29,6 +29,9 @@ import { ChildBComponent } from './observables/subject/child-b/child-b.component
 import { ReplaySubjectComponent } from './observables/replay-subject/replay-subject.component';
 import { AChildComponent } from './observables/replay-subject/a-child/a-child.component';
 import { BChildComponent } from './observables/replay-subject/b-child/b-child.component';
+import { AsyncSubjectComponent } from './observables/async-subject/async-subject.component';
+import { ChunkAComponent } from './observables/async-subject/chunk-a/chunk-a.component';
+import { ChunkBComponent } from './observables/async-subject/chunk-b/chunk-b.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +58,10 @@ import { BChildComponent } from './observables/replay-subject/b-child/b-child.co
     ChildBComponent,
     ReplaySubjectComponent,
     AChildComponent,
-    BChildComponent
+    BChildComponent,
+    AsyncSubjectComponent,
+    ChunkAComponent,
+    ChunkBComponent
   ],
   imports: [
     BrowserModule,

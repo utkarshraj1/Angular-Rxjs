@@ -5,6 +5,7 @@ import { AsyncAwaitComponent } from './async-await/async-await.component';
 import { PromiseComponent } from './promise/promise.component';
 import { ObservablesComponent } from './observables/observables.component';
 
+import { AsyncSubjectComponent } from './observables/async-subject/async-subject.component';
 import { CustomObservableComponent } from './observables/custom-observable/custom-observable.component';
 import { DebounceComponent } from './observables/debounce/debounce.component';
 import { FilterComponent } from './observables/filter/filter.component';
@@ -43,6 +44,7 @@ const routes: Routes = [
       { path: 'debounce', component: DebounceComponent },
       { path: 'subject', component: SubjectComponent },
       { path: 'replay-subject', component: ReplaySubjectComponent },
+      { path: 'async-subject', component: AsyncSubjectComponent },
       { path: '**', redirectTo: '', pathMatch: 'full' }
     ],
   },
