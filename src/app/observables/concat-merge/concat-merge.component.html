@@ -1,0 +1,28 @@
+<h2 class="ml-4 mt-4">Concate & Merge</h2>
+<hr class="mx-2 mt-2">
+<div class="d-flex justify-content-center my-2">
+    <button class="btn btn-outline-primary mr-1" (click)="concatMethod()">Click to concat</button>
+    <button class="btn btn-outline-info ml-1" (click)="mergeMethod()">Click to merge</button>
+</div>
+<div class="row w-100 pl-4">
+    <div class="col-sm-6 center">
+        <strong class="ml-2">Concat</strong>
+        <hr>
+        <strong class="ml-2">{{concatMsg}}</strong>
+        <div *ngIf="concatMsg!==undefined" class="spinner-grow spinner-grow-sm text-dark ml-1"></div>
+        <hr *ngIf="concatMsg!==undefined">
+        <div class="card mb-2 ml-2" *ngFor="let con of concatArr">
+            <div class="card-body">{{con}}</div>
+        </div>
+    </div>
+    <div class="col-sm-6 center">
+        <strong class="ml-2">Merge</strong>
+        <hr>
+        <strong class="ml-2">{{mergeMsg}}</strong>
+        <div *ngIf="mergeMsg!==undefined" class="spinner-grow spinner-grow-sm text-dark ml-1"></div>
+        <hr *ngIf="mergeMsg!==undefined">
+        <div class="card mb-2 ml-2" *ngFor="let mer of mergeArr">
+            <div class="card-body">{{mer}}</div>
+        </div>
+    </div>
+</div>

@@ -3,6 +3,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+
 import { AsyncSubjectComponent } from "./async-subject/async-subject.component";
 import { ChunkAComponent } from "./async-subject/chunk-a/chunk-a.component";
 import { ChunkBComponent } from "./async-subject/chunk-b/chunk-b.component";
@@ -27,6 +28,7 @@ import { SubjectComponent } from "./subject/subject.component";
 import { TakeComponent } from "./take/take.component";
 import { TapComponent } from "./tap/tap.component";
 import { ToArrayComponent } from "./to-array/to-array.component";
+import { ConcatMergeComponent } from './concat-merge/concat-merge.component';
 
 @NgModule({
     declarations: [
@@ -52,7 +54,8 @@ import { ToArrayComponent } from "./to-array/to-array.component";
         BChildComponent,
         AsyncSubjectComponent,
         ChunkAComponent,
-        ChunkBComponent
+        ChunkBComponent,
+        ConcatMergeComponent
     ],
     imports: [
         CommonModule,
