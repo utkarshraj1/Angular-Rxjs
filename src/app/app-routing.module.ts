@@ -6,6 +6,7 @@ import { PromiseComponent } from './promise/promise.component';
 import { ObservablesComponent } from './observables/observables.component';
 
 import { CustomObservableComponent } from './observables/custom-observable/custom-observable.component';
+import { DebounceComponent } from './observables/debounce/debounce.component';
 import { FilterComponent } from './observables/filter/filter.component';
 import { FromEventComponent } from './observables/from-event/from-event.component';
 import { IntervalComponent } from './observables/interval/interval.component';
@@ -13,12 +14,13 @@ import { ListComponent } from './observables/list/list.component';
 import { MapComponent } from './observables/map/map.component';
 import { OfFromComponent } from './observables/of-from/of-from.component';
 import { PluckComponent } from './observables/pluck/pluck.component';
+import { ReplaySubjectComponent } from './observables/replay-subject/replay-subject.component';
 import { RetryComponent } from './observables/retry/retry.component';
+import { SubjectComponent } from './observables/subject/subject.component';
 import { TakeComponent } from './observables/take/take.component';
 import { TapComponent } from './observables/tap/tap.component';
 import { ToArrayComponent } from './observables/to-array/to-array.component';
-import { DebounceComponent } from './observables/debounce/debounce.component';
-import { SubjectComponent } from './observables/subject/subject.component';
+
 
 const routes: Routes = [
   { path: 'promise', component: PromiseComponent },
@@ -40,6 +42,7 @@ const routes: Routes = [
       { path: 'retry', component: RetryComponent },
       { path: 'debounce', component: DebounceComponent },
       { path: 'subject', component: SubjectComponent },
+      { path: 'replay-subject', component: ReplaySubjectComponent },
       { path: '**', redirectTo: '', pathMatch: 'full' }
     ],
   },

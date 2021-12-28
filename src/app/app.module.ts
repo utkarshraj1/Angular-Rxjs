@@ -26,6 +26,9 @@ import { DebounceComponent } from './observables/debounce/debounce.component';
 import { SubjectComponent } from './observables/subject/subject.component';
 import { ChildAComponent } from './observables/subject/child-a/child-a.component';
 import { ChildBComponent } from './observables/subject/child-b/child-b.component';
+import { ReplaySubjectComponent } from './observables/replay-subject/replay-subject.component';
+import { AChildComponent } from './observables/replay-subject/a-child/a-child.component';
+import { BChildComponent } from './observables/replay-subject/b-child/b-child.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +52,10 @@ import { ChildBComponent } from './observables/subject/child-b/child-b.component
     DebounceComponent,
     SubjectComponent,
     ChildAComponent,
-    ChildBComponent
+    ChildBComponent,
+    ReplaySubjectComponent,
+    AChildComponent,
+    BChildComponent
   ],
   imports: [
     BrowserModule,
