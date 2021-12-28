@@ -1,0 +1,11 @@
+<h5 class="mt-2 ml-2">Child A</h5>
+<hr class="mx-1 mt-1">
+<input type="text" class="form-control w-50 ml-2 mb-2" placeholder="Enter number" #input>
+<button class="btn btn-outline-success ml-2 mb-2" (click)="dispatchData(input)">Click</button>
+<hr class="mx-1 mt-1">
+<div class="card ml-2 mb-1" *ngFor="let trivia of triviaData">
+    <div class="card-body">
+        <strong>{{trivia.number}}</strong> =>
+        {{trivia.text}}
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<h5 class="mt-2 ml-2">Child B</h5>
+<hr class="mx-1 mt-1">
+<button class="btn btn-success ml-2" (click)="complete()">Complete the Subscription</button>
+<hr class="mx-1">
+Latest Data:
+<br>
+<div class="card ml-2" *ngIf="latestTrivia!==undefined">
+    <strong>{{latestTrivia.number}}</strong>
+    <div class="card-body">
+        {{latestTrivia.text}}
+    </div>
+</div>

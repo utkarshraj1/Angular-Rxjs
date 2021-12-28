@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, ReplaySubject, Subject } from 'rxjs';
+import { AsyncSubject, BehaviorSubject, ReplaySubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,5 +14,10 @@ export class SubjectsService {
   //#region ReplaySubject Component
   quoteData: ReplaySubject<any> = new ReplaySubject(3);
   //#endregion
+
+  //#region AsyncSubject Component
+  trivia: AsyncSubject<any> = new AsyncSubject<any>();
+  //#endregion
+
   constructor() { }
 }
