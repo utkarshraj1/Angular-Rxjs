@@ -9,59 +9,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PromiseComponent } from './promise/promise.component';
 import { FormsModule } from '@angular/forms';
 import { AsyncAwaitComponent } from './async-await/async-await.component';
-import { ObservablesComponent } from './observables/observables.component';
-import { ListComponent } from './observables/list/list.component';
-import { FromEventComponent } from './observables/from-event/from-event.component';
-import { IntervalComponent } from './observables/interval/interval.component';
-import { OfFromComponent } from './observables/of-from/of-from.component';
-import { ToArrayComponent } from './observables/to-array/to-array.component';
-import { CustomObservableComponent } from './observables/custom-observable/custom-observable.component';
-import { MapComponent } from './observables/map/map.component';
-import { PluckComponent } from './observables/pluck/pluck.component';
-import { FilterComponent } from './observables/filter/filter.component';
-import { TapComponent } from './observables/tap/tap.component';
-import { TakeComponent } from './observables/take/take.component';
-import { RetryComponent } from './observables/retry/retry.component';
-import { DebounceComponent } from './observables/debounce/debounce.component';
-import { SubjectComponent } from './observables/subject/subject.component';
-import { ChildAComponent } from './observables/subject/child-a/child-a.component';
-import { ChildBComponent } from './observables/subject/child-b/child-b.component';
-import { ReplaySubjectComponent } from './observables/replay-subject/replay-subject.component';
-import { AChildComponent } from './observables/replay-subject/a-child/a-child.component';
-import { BChildComponent } from './observables/replay-subject/b-child/b-child.component';
-import { AsyncSubjectComponent } from './observables/async-subject/async-subject.component';
-import { ChunkAComponent } from './observables/async-subject/chunk-a/chunk-a.component';
-import { ChunkBComponent } from './observables/async-subject/chunk-b/chunk-b.component';
-
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     PromiseComponent,
     AsyncAwaitComponent,
-    ObservablesComponent,
-    ListComponent,
-    FromEventComponent,
-    IntervalComponent,
-    OfFromComponent,
-    ToArrayComponent,
-    CustomObservableComponent,
-    MapComponent,
-    PluckComponent,
-    FilterComponent,
-    TapComponent,
-    TakeComponent,
-    RetryComponent,
-    DebounceComponent,
-    SubjectComponent,
-    ChildAComponent,
-    ChildBComponent,
-    ReplaySubjectComponent,
-    AChildComponent,
-    BChildComponent,
-    AsyncSubjectComponent,
-    ChunkAComponent,
-    ChunkBComponent
   ],
   imports: [
     BrowserModule,
