@@ -9,6 +9,7 @@ import { FromEventComponent } from "./from-event/from-event.component";
 import { IntervalComponent } from "./interval/interval.component";
 import { ListComponent } from "./list/list.component";
 import { MapComponent } from "./map/map.component";
+import { MergeMapComponent } from "./merge-map/merge-map.component";
 import { OfFromComponent } from "./of-from/of-from.component";
 import { PluckComponent } from "./pluck/pluck.component";
 import { ReplaySubjectComponent } from "./replay-subject/replay-subject.component";
@@ -36,6 +37,7 @@ const routes: Routes = [
     { path: 'replay-subject', component: ReplaySubjectComponent },
     { path: 'async-subject', component: AsyncSubjectComponent },
     { path: 'concat-merge', component: ConcatMergeComponent },
+    { path: 'merge-map', component: MergeMapComponent },
     { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 

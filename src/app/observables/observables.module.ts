@@ -29,6 +29,7 @@ import { TakeComponent } from "./take/take.component";
 import { TapComponent } from "./tap/tap.component";
 import { ToArrayComponent } from "./to-array/to-array.component";
 import { ConcatMergeComponent } from './concat-merge/concat-merge.component';
+import { MergeMapComponent } from './merge-map/merge-map.component';
 
 @NgModule({
     declarations: [
@@ -55,7 +56,8 @@ import { ConcatMergeComponent } from './concat-merge/concat-merge.component';
         AsyncSubjectComponent,
         ChunkAComponent,
         ChunkBComponent,
-        ConcatMergeComponent
+        ConcatMergeComponent,
+        MergeMapComponent
     ],
     imports: [
         CommonModule,

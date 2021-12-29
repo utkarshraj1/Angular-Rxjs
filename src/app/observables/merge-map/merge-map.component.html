@@ -1,0 +1,21 @@
+<h2 class="ml-4 mt-4">MergeMap</h2>
+<hr class="mx-2 mt-2">
+<div class="d-flex align-items-center flex-column">
+    <div class="center">
+        <strong class="ml-2 mt-2">Select the way of implementation:</strong>
+        <select class="border border-info rounded mx-2 mt-2" [(ngModel)]="selectedOption">
+            <option value="Map">Map</option>
+            <option value="Map + MergeAll">Map + MergeAll</option>
+            <option value="MergeMap">MergeMap</option>
+        </select>
+        <hr class="mx-1 my-1">
+        <strong class="mx-2 text-primary">Selected Option</strong>
+        <span class="badge bg-primary">{{selectedOption}}</span>
+        <hr class="mx-1 my-1">
+        <div class="d-flex justify-content-center">
+            <button class="btn btn-outline-primary ml-2 my-2" (click)="onOptionSelect()">Click to Implement</button>
+        </div>
+    </div>
+    <div id="card" class="card">
+    </div>
+</div>
