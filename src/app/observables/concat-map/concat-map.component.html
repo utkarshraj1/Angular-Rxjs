@@ -1,0 +1,23 @@
+<h2 class="ml-4 mt-4">ConcatMap</h2>
+<hr class="mx-2 mt-2">
+
+<div class="d-flex align-items-center flex-column">
+    <div>
+        <button style="border-radius: 20px 0px 0px 20px;" [class.clicked]="isConcatMap"
+            class="button-toggle border border-0" (click)="fetchData('CM')">ConcatMap</button>
+        <button style="border-radius: 0px 20px 20px 0px" [class.clicked]="!isConcatMap"
+            class="button-toggle border border-0" (click)="fetchData('MCA')">Map+ConcatAll</button>
+    </div>
+    <div class="row w-100 mt-2">
+        <div class="col-sm-6 border border-1 rounded">
+            <h5 class="ml-2 mt-2 text-dark">ConcatMap Data:</h5>
+            <hr class="mx-1 mt-1">
+            <div id="card-1" class="card"></div>
+        </div>
+        <div class="col-sm-6 border border-1 rounded">
+            <h5 class="ml-2 mt-2 text-dark">Map + ConcatAll Data:</h5>
+            <hr class="mx-1 mt-1">
+            <div id="card-2" class="card"></div>
+        </div>
+    </div>
+</div>

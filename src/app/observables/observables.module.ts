@@ -30,6 +30,7 @@ import { TapComponent } from "./tap/tap.component";
 import { ToArrayComponent } from "./to-array/to-array.component";
 import { ConcatMergeComponent } from './concat-merge/concat-merge.component';
 import { MergeMapComponent } from './merge-map/merge-map.component';
+import { ConcatMapComponent } from './concat-map/concat-map.component';
 
 @NgModule({
     declarations: [
@@ -57,7 +58,8 @@ import { MergeMapComponent } from './merge-map/merge-map.component';
         ChunkAComponent,
         ChunkBComponent,
         ConcatMergeComponent,
-        MergeMapComponent
+        MergeMapComponent,
+        ConcatMapComponent
     ],
     imports: [
         CommonModule,

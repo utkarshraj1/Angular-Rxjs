@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { AsyncSubjectComponent } from "./async-subject/async-subject.component";
+import { ConcatMapComponent } from "./concat-map/concat-map.component";
 import { ConcatMergeComponent } from "./concat-merge/concat-merge.component";
 import { CustomObservableComponent } from "./custom-observable/custom-observable.component";
 import { DebounceComponent } from "./debounce/debounce.component";
@@ -38,6 +39,7 @@ const routes: Routes = [
     { path: 'async-subject', component: AsyncSubjectComponent },
     { path: 'concat-merge', component: ConcatMergeComponent },
     { path: 'merge-map', component: MergeMapComponent },
+    { path: 'concat-map', component: ConcatMapComponent },
     { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
