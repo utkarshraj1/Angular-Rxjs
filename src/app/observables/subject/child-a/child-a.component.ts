@@ -17,11 +17,13 @@ export class ChildAComponent implements OnInit, OnDestroy {
     'Eyeshadow',
     'Foundation'
   ];
-  productType!: string;
+  productType: string;
   loadingStatus!: string;
   lSubjectSub!: Subscription;
 
-  constructor(private sub: SubjectsService) { }
+  constructor(private sub: SubjectsService) {
+    this.productType = 'Blush';
+  }
 
   ngOnInit(): void {
     this.lSubjectSub = this.sub.loadStatus.subscribe(res => {
